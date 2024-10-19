@@ -13,7 +13,9 @@ function App() {
   });
 
   const totalFeedback = fbState.good + fbState.neutral + fbState.bad;
-  const positiveFeedback = Math.round((fbState.good / totalFeedback) * 100);
+  const positiveFeedback = Math.round(
+    ((fbState.good + fbState.neutral) / totalFeedback) * 100
+  );
 
   const updateFeedback = feedbackType => {
     if (feedbackType === 'reset')
